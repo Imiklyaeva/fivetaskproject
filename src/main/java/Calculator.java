@@ -4,10 +4,11 @@ import calculationOperation.Multiplication;
 import calculationOperation.Subtraction;
 import floatNumber.FloatNumber;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Задание 5. Калькулятор ООП
+ * Задание 7. Калькулятор ООП+обработка исключения по вводу в консоль не дробных чисел
  *
  * @author Irina Miklyaeva
  */
@@ -19,17 +20,33 @@ public class Calculator {
         FloatNumber floatNumberOne = new FloatNumber();// Создали первый объект класса Дробное число
         FloatNumber floatNumberTwo = new FloatNumber();// Создали второй объект класса Дробное число
         if ("+".equals(calcOperation)) {//Если ввели '+' создаем объект класса Сложение
-            Addition addition= new Addition(floatNumberOne.getSomeFloatnumber(),floatNumberTwo.getSomeFloatnumber());//передаем ему оба дробных числа
-            addition.printResult();// выводим в консоль результат
+         try {
+             Addition addition = new Addition(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());//передаем ему оба дробных числа
+             addition.printResult();// выводим в консоль результат
+         }catch (InputMismatchException e){
+             System.out.println ("Введено не дробное число");
+         }
         } else if ("-".equals(calcOperation)) {// Eсли ввели '-'
-            Subtraction subtraction= new Subtraction(floatNumberOne.getSomeFloatnumber(),floatNumberTwo.getSomeFloatnumber());
-            subtraction.printResult();
+            try {
+                Subtraction subtraction = new Subtraction(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
+                subtraction.printResult();
+            }catch (InputMismatchException e) {
+                System.out.println("Введено не дробное число");
+            }
         } else if ("/".equals(calcOperation)) {// Если ввели '/'
-            Division division= new Division(floatNumberOne.getSomeFloatnumber(),floatNumberTwo.getSomeFloatnumber());
-            division.printResult();
+            try {
+                Division division = new Division(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
+                division.printResult();
+            } catch (InputMismatchException e){
+                System.out.println("Введено не дробное число");
+            }
         } else if ("*".equals(calcOperation)) {//Если ввели '*'
-            Multiplication multiplication= new Multiplication(floatNumberOne.getSomeFloatnumber(),floatNumberTwo.getSomeFloatnumber());
-            multiplication.printResult();
+            try {
+                Multiplication multiplication = new Multiplication(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
+                multiplication.printResult();
+            } catch (InputMismatchException e) {
+                System.out.println("Введено не дробное число");
+            }
         } else System.out.println("Введен неверный знак действия");// Вывод ошибки в консоль
         scanner.close();// закрываем сканер
     }

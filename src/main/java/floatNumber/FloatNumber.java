@@ -1,5 +1,6 @@
 package floatNumber;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FloatNumber {// Класс Дробное число
@@ -9,6 +10,7 @@ public class FloatNumber {// Класс Дробное число
 
     /**
      * Метод для ввода дробного числа из консоли
+     *
      * @return Дробное число
      */
     public float getSomeFloatnumber() {
