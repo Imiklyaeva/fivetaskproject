@@ -8,6 +8,9 @@ public class Division extends Operation {// Класс Деление насле
 
     @Override
     public float getCalculationResult() { // переопределяем метод родительского класса для получения операции калькулятора
+
         return getNumberOne() / getNumberTwo();
+
+
     }
 }
