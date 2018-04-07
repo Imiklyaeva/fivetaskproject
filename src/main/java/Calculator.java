@@ -24,28 +24,28 @@ public class Calculator {
              Addition addition = new Addition(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());//передаем ему оба дробных числа
              addition.printResult();// выводим в консоль результат
          }catch (InputMismatchException e){
-             System.out.println ("Введено не дробное число");
+             System.out.println ("Введено не число");
          }
         } else if ("-".equals(calcOperation)) {// Eсли ввели '-'
             try {
                 Subtraction subtraction = new Subtraction(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
                 subtraction.printResult();
             }catch (InputMismatchException e) {
-                System.out.println("Введено не дробное число");
+                System.out.println("Введено не число");
             }
         } else if ("/".equals(calcOperation)) {// Если ввели '/'
             try {
                 Division division = new Division(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
                 division.printResult();
             } catch (InputMismatchException e){
-                System.out.println("Введено не дробное число");
+                System.out.println("Введено не число");
             }
         } else if ("*".equals(calcOperation)) {//Если ввели '*'
             try {
                 Multiplication multiplication = new Multiplication(floatNumberOne.getSomeFloatnumber(), floatNumberTwo.getSomeFloatnumber());
                 multiplication.printResult();
             } catch (InputMismatchException e) {
-                System.out.println("Введено не дробное число");
+                System.out.println("Введено не число");
             }
         } else System.out.println("Введен неверный знак действия");// Вывод ошибки в консоль
         scanner.close();// закрываем сканер

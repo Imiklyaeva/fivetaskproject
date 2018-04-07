@@ -4,7 +4,7 @@ public abstract class Operation {// Абстрактный класс Опера
     private float numberOne; // Поле первое дробное число;
     private float numberTwo; // Поле второе дробное число;
 
-    Operation(float numberOne, float numberTwo) {// Конструктор для полей класса
+    protected Operation(float numberOne, float numberTwo) {// Конструктор для полей класса
         this.numberOne = numberOne;
         this.numberTwo = numberTwo;
     }
